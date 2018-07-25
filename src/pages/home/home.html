@@ -7,8 +7,32 @@
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+	
+		<ion-card>		
+			<ion-list>
+			  <ion-item>
+			    <ion-label floating>Topic</ion-label>
+			    <ion-input type="text" [(ngModel)]="topic"></ion-input>
+			  </ion-item>
+			  <ion-item>
+			    <ion-label floating>Mensaje</ion-label>
+			    <ion-input type="text" [(ngModel)]="message"></ion-input>
+			  </ion-item>
+			</ion-list>
+			<button ion-button full (click)="unsafePublish()">Enviar</button>
+		</ion-card>
+		<ion-card>
+			<ion-card-header>
+				Sensor de Temperatura
+			</ion-card-header>
+			<ion-card-content>
+			    <ion-range min="-100" max="200" step="10" snaps="true" [(ngModel)]="warmth" color="danger">
+	        		<ion-icon range-left small color="danger" name="thermometer"></ion-icon>
+	        		<ion-icon range-right color="danger" name="thermometer"></ion-icon>
+				</ion-range>			
+			</ion-card-content>
+		</ion-card>
+	
+
 </ion-content>
